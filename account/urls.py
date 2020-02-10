@@ -4,5 +4,5 @@ urlpatterns = [
     path('/sign-up', SignUpView.as_view()),
     path('', SignUpView.as_view()),
     path('/sign-in', SignInView.as_view()),
-    # path('/comment', AccountComment.as_view()),
+    
 ]

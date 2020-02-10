@@ -26,8 +26,8 @@ class SignInView(View):
         if Account.objects.filter(email = data['email']).exists() :
             user = Account.objects.get(email = data['email'])
             if user.password == data['password'] :
-                return JsonResponse({'message':f'{user.email}님 로그인 성공!'}, status=200)
+                return JsonResponse({'message':f'{user.email} 로그인 성공!'}, status=200)
             else :
-                return JsonResponse({'message':'비밀번호가 틀렸어요'},status = 200)
+                return JsonResponse({'message':'비밀번호 틀림'},status = 200)
 
-        return JsonResponse({'message':'등록되지 않은 이메일 입니다.'},status=200)
+        return JsonResponse({'message':'없는 이메일'},status=200)
